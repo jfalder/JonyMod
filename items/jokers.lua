@@ -7,6 +7,9 @@
 ----------------------------------------------------------
 ----------- MOD CODE -------------------------------------
 
+
+---Sexy Sam
+
 SMODS.Atlas{
     key = 'Sam',
     path = 'Sam.png',
@@ -77,6 +80,7 @@ SMODS.Joker{
     end
 }
 
+---KSAC Hours
 
 SMODS.Atlas{
     key = 'KSAC',
@@ -84,7 +88,6 @@ SMODS.Atlas{
     px = 200,
     py = 250,
 }
-
 
 
 SMODS.Joker{
@@ -147,6 +150,7 @@ SMODS.Joker{
    
 }
 
+---ShangChi
 
 SMODS.Atlas{
     key = "ShangChi",
@@ -181,7 +185,7 @@ SMODS.Joker{
     end,
 }
 
-
+---Dirk Nowitzki
 
 SMODS.Atlas{
     key = "Dirk",
@@ -214,7 +218,7 @@ SMODS.Joker{
 
 
 
-
+---Triple Swipe
 SMODS.Atlas{
     key = "Triple",
     path = "TripleSwipe.png",
@@ -301,6 +305,7 @@ SMODS.Joker{
 
 
 
+---MR. President
 
 SMODS.Atlas{
     key = "President",
