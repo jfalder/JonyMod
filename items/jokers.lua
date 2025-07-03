@@ -305,7 +305,7 @@ SMODS.Joker{
 
 
 
----MR. President
+---Mr. President
 
 SMODS.Atlas{
     key = "President",
@@ -345,6 +345,7 @@ SMODS.Joker{
     end,
 }
 
+---Cucumber?
 
 SMODS.Atlas{
     key = 'Cucumber',
@@ -358,10 +359,47 @@ SMODS.Joker{
     key = 'Cucumber',
     loc_txt = {
         name = "Cucumber?",
-        text = {" "}
+        text = {"For Each Sister Wing Card {C:red}+10{} Mult"}
     },
     atlas = 'Cucumber',
     rarity = 1,
+    cost = 6,
+    pools = {["jonymodaddition"] = true, ["SisterWing"] = true},
+
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+
+    pos = {x=0, y=0},
+
+
+
+}
+
+
+
+
+SMODS.Atlas{
+    key = 'Balkema',
+    path = 'Balkema.png',
+    px = 100,
+    py = 150,
+}
+
+SMODS.Joker{
+    key = 'Balkema',
+    loc_txt = {
+        name = "Luke Balkema",
+        text = {"{X:mult,C:white}x3.5{} Mult",
+                "Crashes your Game if you lose",
+                "{C:inactive}I'm just making the game more fun!{}"}
+    },
+
+
+    atlas = 'Balkema',
+    rarity = 3,
     cost = 6,
     pools = {["jonymodaddition"] = true},
 
@@ -372,4 +410,19 @@ SMODS.Joker{
     perishable_compat = true,
 
     pos = {x=0, y=0},
+
+
+
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return{
+                xmult = 3.5
+            }
+        end
+
+        if context.game_over then
+            local crash = nil
+            crash.do_it = true
+        end
+    end,
 }
