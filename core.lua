@@ -7,7 +7,7 @@
 ----------------------------------------------------------
 ----------- MOD CODE -------------------------------------
 
--- shoutouts cryptid & mathisfun --
+--  --
 
 if not JonyMod then
 	JonyMod = {}
@@ -22,20 +22,7 @@ end
 
 
 local creditspage = {
-        "Yahiamice",
-        "(mod author, 99% of the work)",
-		"",
-        "Lisnovski, Blake Andrews, violxiv",
-        "Art assets",
-		"",
-		"Nova_422, Sciman101",
-        "Code contributions",
-		"",
-		"meganeko",
-        "Cybergrind soundtrack",
-		"",
-        "HexaCryonic, Burssty",
-        "Playtesting",
+       "Jonah Falder - Most of the work"
     }
 
 SMODS.current_mod.extra_tabs = function() --Credits tab

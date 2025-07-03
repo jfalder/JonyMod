@@ -187,34 +187,7 @@ SMODS.Joker{
 
 ---Dirk Nowitzki
 
-SMODS.Atlas{
-    key = "Dirk",
-    path = "dirk.png",
-    px= 275,
-    py = 500,
-}
 
-
-SMODS.Joker{
-    key = 'Dirk',
-    loc_txt = {
-        name = "Dirk Nowitzki",
-        text = {"Changes Bonuses Each Round",
-                "Currently " }
-    },
-    atlas = 'Dirk',
-    rarity = 1,
-    cost = 6,
-    pools = {["jonymodaddition"] = true},
-
-    unlocked = true,
-    discovered = true,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-
-    pos = {x=0, y=0},
-}
 
 
 
