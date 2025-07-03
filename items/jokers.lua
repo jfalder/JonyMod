@@ -359,7 +359,8 @@ SMODS.Joker{
     key = 'Cucumber',
     loc_txt = {
         name = "Cucumber?",
-        text = {"For Each Sister Wing Card {C:red}+10{} Mult"}
+        text = {"For Each Sister Wing Joker {C:red}+#1#{} Mult",
+                "Currently {C:red}+#2#{} Mult"}
     },
     atlas = 'Cucumber',
     rarity = 1,
@@ -374,12 +375,39 @@ SMODS.Joker{
 
     pos = {x=0, y=0},
 
+    config = { 
+        extra = { 
+            mult = 10,
+            multtotal = 0,
+        } 
+    },
+    
+    
+    loc_vars = function(self, info_queue, center)
+		return { vars = {center.ability.extra.mult, center.ability.extra.multtotal} } 
+	end,
 
 
+    calculate = function(self, card, context)
+        siscount = 0
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.SisterWing then
+                siscount = siscount + 1
+            end
+        end
+        card.ability.extra.multtotal =  siscount * card.ability.extra.mult
+        if context.joker_main then
+            return {
+                color = G.C.RED,
+                message = "+".. card.ability.extra.multtotal,
+                mult_mod = card.ability.extra.multtotal
+            }
+        end
+    end,
 }
 
 
-
+---Balkema
 
 SMODS.Atlas{
     key = 'Balkema',
