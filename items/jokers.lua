@@ -1,9 +1,9 @@
 --- STEAMODDED HEADER
---- MOD_NAME: JonyMod
---- MOD_ID: JonyMod
+--- MOD_NAME: PDUBMod
+--- MOD_ID: PDUBMod
 --- MOD_AUTHOR: Jonah Falder
 --- MOD_DESCRIPTION: hi
---- PREFIX: jony
+--- PREFIX: pdub
 ----------------------------------------------------------
 ----------- MOD CODE -------------------------------------
 
@@ -30,7 +30,7 @@ SMODS.Joker{
     atlas = "Sam",
     rarity = 1,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -101,7 +101,7 @@ SMODS.Joker{
     atlas = 'KSAC',
     rarity = 1,
     cost = 4,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -168,7 +168,7 @@ SMODS.Joker{
     atlas = 'ShangChi',
     rarity = 1,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -205,7 +205,7 @@ SMODS.Joker{
     atlas = 'Dirk',
     rarity = 1,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -245,7 +245,7 @@ SMODS.Joker{
     atlas = 'Triple',
     rarity = 1,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -331,7 +331,7 @@ SMODS.Joker{
     atlas = 'President',
     rarity = 4,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -371,7 +371,7 @@ SMODS.Joker{
     atlas = 'Cucumber',
     rarity = 1,
     cost = 6,
-    pools = {["jonymodaddition"] = true, ["SisterWing"] = true},
+    pools = {["pdubmodaddition"] = true, ["SisterWing"] = true},
 
     unlocked = true,
     discovered = true,
@@ -435,7 +435,7 @@ SMODS.Joker{
     atlas = 'Balkema',
     rarity = 3,
     cost = 6,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,
@@ -498,7 +498,7 @@ SMODS.Joker{
     atlas = 'Freaky',
     rarity = 2,
     cost = 4,
-    pools = {["jonymodaddition"] = true},
+    pools = {["pdubmodaddition"] = true},
 
     unlocked = true,
     discovered = true,

@@ -1,16 +1,16 @@
 --- STEAMODDED HEADER
---- MOD_NAME: JonyMod
---- MOD_ID: JonyMod
+--- MOD_NAME: PDUBMod
+--- MOD_ID: PDUBMod
 --- MOD_AUTHOR: Jonah Falder
 --- MOD_DESCRIPTION: hi
---- PREFIX: jony
+--- PREFIX: pdub
 ----------------------------------------------------------
 ----------- MOD CODE -------------------------------------
 
 --  --
 
-if not JonyMod then
-	JonyMod = {}
+if not PDUBModMod then
+	PDUBMod = {}
 end
 local global = {}
 
@@ -210,8 +210,8 @@ end
 
 
 local mod_path = "" .. SMODS.current_mod.path
-JonyMod.path = mod_path
-JonyMod_config = SMODS.current_mod.config
+PDUBMod.path = mod_path
+PDUBMod_config = SMODS.current_mod.config
 
 SMODS.current_mod.optional_features = {
     retrigger_joker = true,
@@ -225,9 +225,9 @@ G.effectmanager = {}
 
 
 
--- jonymod joker pool
+-- pdubmod joker pool
 SMODS.ObjectType({
-	key = "jonymodaddition",
+	key = "pdubmodaddition",
 	default = "j_reserved_parking",
 	cards = {},
 	inject = function(self)
@@ -242,7 +242,7 @@ SMODS.ObjectType({
 --Load item files
 local files = NFS.getDirectoryItems(mod_path .. "items")
 for _, file in ipairs(files) do
-	print("[JONYMOD] Loading lua file " .. file)
+	print("[PDUBMOD] Loading lua file " .. file)
 	local f, err = SMODS.load_file("items/" .. file)
 	if err then
 		error(err) 
@@ -253,7 +253,7 @@ end
 --Load lib files
 local files = NFS.getDirectoryItems(mod_path .. "libs/")
 for _, file in ipairs(files) do
-	print("[JONYMOD] Loading lib file " .. file)
+	print("[PDUBMOD] Loading lib file " .. file)
 	local f, err = SMODS.load_file("libs/" .. file)
 	if err then
 		error(err) 
@@ -264,7 +264,7 @@ end
 --Load Localization file
 local files = NFS.getDirectoryItems(mod_path .. "localization")
 for _, file in ipairs(files) do
-	print("[JONYMOD] Loading localization file " .. file)
+	print("[PDUBMOD] Loading localization file " .. file)
 	local f, err = SMODS.load_file("localization/" .. file)
 	if err then
 		error(err) 

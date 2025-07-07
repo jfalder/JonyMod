@@ -4,7 +4,7 @@ Installing Instructions
 
 2.Download Steamodded and add it to your %AppData%Roaming\Balatro\mods folder https://github.com/Steamodded/smods
 
-3.Download the latest release of the JonyMod and extract the folder into %AppData%Roaming\Balatro\mods It should look like this \AppData\Roaming\Balatro\mods
+3.Download the latest release of the PDUBMod and extract the folder into %AppData%Roaming\Balatro\mods It should look like this \AppData\Roaming\Balatro\mods
 
 4.Launch the game and click the Mods button, it should've loaded properly if you followed the steps correctly!
 

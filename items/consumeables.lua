@@ -1,5 +1,5 @@
 SMODS.Atlas{
-    key = 'jony_card',
+    key = 'pdub_card',
     path = 'jony.png',
     px = 35,
     py = 45,
@@ -7,15 +7,15 @@ SMODS.Atlas{
 
 
 SMODS.Consumable({
-    key = "jony_card",
+    key = "pdub_card",
     set = "Tarot",
     object_type = "Consumable",
-    name = "jonyworld",
+    name = "pdubworld",
     loc_txt = {
-        name = "jonyworld",
+        name = "pdubworld",
         text={
         "Creates a random",
-        "{C:attention}JonyMod Joker{}",
+        "{C:attention}PDUBMod Joker{}",
         "{C:inactive}(must have room){}",
         },
     },
@@ -23,12 +23,12 @@ SMODS.Consumable({
 	
 	pos = {x=0, y= 0},
 	order = 99,
-	atlas = "jony_card",
+	atlas = "pdub_card",
     unlocked = true,
     cost = 4,
 
     use = function(self, card, area, copier)
-        local card = create_card("jonymodaddition", G.Jokers, nil, nil, nil, nil, nil, 'jonyworld')
+        local card = create_card("pdubmodaddition", G.Jokers, nil, nil, nil, nil, nil, 'pdubworld')
         card:add_to_deck()
         G.jokers:emplace(card)
     end,

@@ -1,12 +1,12 @@
 {
-"id": "JonyMod",
-	"name": "JonyMod",
-	"display_name": "JonyMod",
+"id": "PDUBMod",
+	"name": "PDUBMod",
+	"display_name": "PDUBMod",
 	"author": [
 		"Jonah Falder"
 	],
 	"description": "big guy",
-	"prefix": "jony",
+	"prefix": "pdub",
 	"main_file": "core.lua",
 	"priority": 0,
 	"badge_colour": "7a2eb6",
