@@ -187,7 +187,40 @@ SMODS.Joker{
 
 ---Dirk Nowitzki
 
+SMODS.Atlas{
+    key = "Dirk",
+    path = "dirk.png",
+    px= 275,
+    py = 500,
+}
 
+
+SMODS.Joker{
+    key = 'Dirk',
+    loc_txt = {
+        name = "Dirk Nowitzki",
+        text = {"Changes Bonuses Each Round",
+                "Currently " }
+    },
+    atlas = 'Dirk',
+    rarity = 1,
+    cost = 6,
+    pools = {["jonymodaddition"] = true},
+
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+
+    pos = {x=0, y=0},
+
+
+    calculate = function(self, card, context)
+        
+
+    end,
+}
 
 
 
@@ -427,3 +460,96 @@ SMODS.Joker{
         end
     end,
 }
+
+
+
+
+
+--Freaky
+
+
+
+function get_edition_joker_count()
+    local count = 0
+    for _, joker in ipairs(G.jokers.cards) do
+        if joker.edition and joker.edition.type then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+SMODS.Atlas {
+    key = 'Freaky',
+    path = 'Freak.png',
+    px = 600,
+    py = 900,
+}
+
+
+SMODS.Joker{
+    key = 'Freaky',
+    loc_txt = {
+        name = "Freaky Gogis",
+        text = {"When Wheel of Fortune fails, {C:red}+#1#{} Mult",
+                "Currently: {C:red}+#2#{} Mult",
+                "Puts a Wheel of Fortune in Every Shop"}
+    },
+    atlas = 'Freaky',
+    rarity = 2,
+    cost = 4,
+    pools = {["jonymodaddition"] = true},
+
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+
+    pos = {x=0, y=0.1},
+
+    config = { 
+        extra = { 
+            add = 5,
+            mult = 0,
+            count = 0
+        } 
+    },
+
+
+
+    loc_vars = function(self, info_queue, center)
+        return { vars = {center.ability.extra.add, center.ability.extra.mult} }
+    end,
+
+
+    calculate = function(self, card, context)
+
+
+        if context.type == "store_joker_create" then
+            local wof = create_card('Tarot', context.area, nil, nil, nil, nil, 'c_wheel_of_fortune')
+            create_shop_card_ui(wof ,'Tarot', context.area )
+            card.states.visible = false
+            
+        end
+        
+        if context.consumeable then
+            if context.consumeable.ability.name == "Wheel of Fortune" and not context.consumeable.cry_wheel_success then
+                card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.add
+                return {
+                    message = "+".. card.ability.extra.add
+                }
+            end
+        end
+        
+        
+        if context.joker_main then 
+            return {
+                mult = card.ability.extra.mult
+            }
+        end
+        
+    end,
+}
+
+
