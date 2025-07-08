@@ -513,25 +513,43 @@ SMODS.Joker{
             add = 5,
             mult = 0,
             count = 0
-        } 
+        } ,
+        
     },
 
-
-
     loc_vars = function(self, info_queue, center)
-        return { vars = {center.ability.extra.add, center.ability.extra.mult} }
+        info_queue[#info_queue + 1] = { key = 'tag_wof', set = 'Tag' }
+        return { vars = {center.ability.extra.add, center.ability.extra.mult, localize { type = 'name_text', set = 'Tag', key = 'tag_wof' }} }
+     
     end,
 
+
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.shop.joker_max = G.GAME.shop.joker_max + 1
+        if G.shop then
+            G.shop:recalculate()
+            G.shop_jokers.T.w = 6*1.02*G.CARD_W
+            G.shop_jokers.T.h = 1.05*G.CARD_H
+        end
+    end,
+
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.shop.joker_max = G.GAME.shop.joker_max - 1
+    end,
 
     calculate = function(self, card, context)
 
 
-        if context.type == "store_joker_create" then
-            local wof = create_card('Tarot', context.area, nil, nil, nil, nil, 'c_wheel_of_fortune')
-            create_shop_card_ui(wof ,'Tarot', context.area )
-            card.states.visible = false
-            
+        if G.GAME.current_round.hands_played == 0 then
+            count = 0
         end
+
+        if context.end_of_round and count == 0 then
+        
+            add_tag(Tag('tag_pdub_tag_wof'))
+            count = 1
+        end
+
         
         if context.consumeable then
             if context.consumeable.ability.name == "Wheel of Fortune" and not context.consumeable.cry_wheel_success then

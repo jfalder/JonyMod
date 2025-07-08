@@ -22,7 +22,8 @@ end
 
 
 local creditspage = {
-       "Jonah Falder - Most of the work"
+       "Jonah Falder - Most of the work",
+       "Shoutout to the Cryptid Mod Discord for help"
     }
 
 SMODS.current_mod.extra_tabs = function() --Credits tab
@@ -48,7 +49,7 @@ SMODS.current_mod.extra_tabs = function() --Credits tab
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "By Yahiamice",
+                    text = "By Jonah Falder",
                     shadow = false,
                     scale = scale*2,
                     colour = G.C.PURPLE
