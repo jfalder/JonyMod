@@ -85,7 +85,7 @@ SMODS.current_mod.extra_tabs = function() --Credits tab
                     {
                     n = G.UIT.T,
                     config = {
-                        text = "Lisnovski, Blake Andrews, violxiv",
+                        text = "PDUB SNAPCHAT",
                         shadow = false,
                         scale = scale,
                         colour = G.C.MONEY
@@ -121,7 +121,7 @@ SMODS.current_mod.extra_tabs = function() --Credits tab
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "Nova_422, Sciman101",
+                    text = "JONAH FALDER",
                     shadow = false,
                     scale = scale,
                     colour = G.C.GREEN
@@ -157,7 +157,7 @@ SMODS.current_mod.extra_tabs = function() --Credits tab
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "The Cyber Grind - meganeko / Buy Somethin' Will Ya - Earthbound / Game Corner - Pokemon Emerald",
+                    text = "Balatro",
                     shadow = false,
                     scale = scale*0.75,
                     colour = G.C.RED
@@ -193,7 +193,7 @@ SMODS.current_mod.extra_tabs = function() --Credits tab
                 {
                     n = G.UIT.T,
                     config = {
-                    text = "Burssty & HexaCryonic for playtesting & the Cryptid Discord for help!",
+                    text = "The Cryptid & Baltro Discords for help!",
                     shadow = false,
                     scale = scale*0.66,
                     colour = G.C.BLUE

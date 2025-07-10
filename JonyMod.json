@@ -14,10 +14,10 @@
 	"version": "2.1",
 	"dependencies": [
 		"Lovely (>=0.7)",
+		"Talisman (<=2.3.0)",
 		"Balatro (>=1.0.1o)"
 	],
 	"conflicts": [
-	"Talisman (<=2.0.2)",
 	"Cryptid (<<0.5.4)"
 	]
 }

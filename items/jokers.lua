@@ -188,21 +188,19 @@ SMODS.Joker{
 ---Dirk Nowitzki
 
 SMODS.Atlas{
-    key = "Dirk",
-    path = "dirk.png",
-    px= 275,
-    py = 500,
+    key = "Dirk0",
+    path = "dirksheet.png",
+    px= 73,
+    py = 110,
 }
+
+
 
 
 SMODS.Joker{
     key = 'Dirk',
-    loc_txt = {
-        name = "Dirk Nowitzki",
-        text = {"Changes Bonuses Each Round",
-                "Currently " }
-    },
-    atlas = 'Dirk',
+
+    atlas = 'Dirk0',
     rarity = 1,
     cost = 6,
     pools = {["pdubmodaddition"] = true},
@@ -213,12 +211,153 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
 
-    pos = {x=0, y=0},
+    pos = {x = 0, y = 0},
+
+    config = {
+        extra = {
+            chosen = 0,
+            count = 0,
+            dollaramt = 3
+        }
+    },
+
+    loc_vars = function(self, info_queue, center)
+        return {
+            key = center.ability.extra.chosen and ((center.ability.extra.chosen == 0 and "j_pdub_key_alt0") or
+            (center.ability.extra.chosen == 1 and "j_pdub_key_alt1") or 
+            (center.ability.extra.chosen == 2 and "j_pdub_key_alt2") or
+            (center.ability.extra.chosen == 3 and "j_pdub_key_alt3") or
+            (center.ability.extra.chosen == 4 and "j_pdub_key_alt4") or
+            (center.ability.extra.chosen == 5 and "j_pdub_key_alt5") or
+            (center.ability.extra.chosen == 6 and "j_pdub_key_alt6")) or nil,
+        }
+    end,
 
 
     calculate = function(self, card, context)
         
 
+        if context.after then
+            card.ability.extra.chosen = math.random(1,6)          
+        
+            if card.ability.extra.chosen == 1 then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    blocking = false,
+                    delay = 0,
+                        func = function()
+                            card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                            card.children.center:set_sprite_pos({x=1, y=0})
+                            return true
+                        end,
+
+                }))
+            end
+            if card.ability.extra.chosen == 2 then 
+                 G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    blocking = false,
+                    delay = 0,
+                        func = function()
+                            card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                            card.children.center:set_sprite_pos({x=2, y=0})
+                            return true
+                        end,
+
+                    }))
+            end
+            if card.ability.extra.chosen == 3 then
+                G.E_MANAGER:add_event(Event({
+                trigger = 'immediate',
+                blocking = false,
+                delay = 0,
+                    func = function()
+                        card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                        card.children.center:set_sprite_pos({x=3, y=0})
+                        return true
+                    end,
+
+                }))
+               
+            end
+            if card.ability.extra.chosen == 4 then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    blocking = false,
+                    delay = 0,
+                        func = function()
+                            card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                            card.children.center:set_sprite_pos({x=0, y=1})
+                            return true
+                        end,
+
+                    }))
+            
+            end
+            if card.ability.extra.chosen == 5 then
+
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    blocking = false,
+                    delay = 0,
+                        func = function()
+                            card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                            card.children.center:set_sprite_pos({x=1, y=1})
+                            return true
+                        end,
+
+                    }))
+            end
+            if card.ability.extra.chosen == 6 then
+
+                 G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    blocking = false,
+                    delay = 0,
+                        func = function()
+                            card_eval_status_text(card,'extra',nil,nil,nil,{message = "SWITCH!"})
+                            card.children.center:set_sprite_pos({x=2, y=1})
+                            return true
+                        end,
+
+                    }))
+        
+            end
+        end
+
+        if context.joker_main then 
+            if card.ability.extra.chosen == 1 then
+                return {
+                    mult = 15
+                }
+            end
+            if card.ability.extra.chosen == 2 then 
+                return {
+                    xmult = 2
+                }
+            end
+            if card.ability.extra.chosen == 3 then
+                return {
+                    chips = 250
+                }
+            end
+            if card.ability.extra.chosen == 4 then
+                return {
+                    x_chips = 4
+                }
+            end
+            if card.ability.extra.chosen == 5 then
+                return {
+                    ease_dollars(card.ability.extra.dollaramt),
+                    card_eval_status_text(card,'extra',nil,nil,nil,{message = "$"..card.ability.extra.dollaramt})
+                }
+            end
+            if card.ability.extra.chosen == 6 then
+                return {
+                    emult = 2
+                }
+            end
+        end
     end,
 }
 
@@ -344,8 +483,7 @@ SMODS.Joker{
     calculate = function(self, card, context)
        if context.joker_main then
             return {
-                message = '^2',
-                xmult = mult
+                emult = 2
             }
         end
     end,
