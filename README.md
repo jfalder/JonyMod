@@ -6,7 +6,9 @@ Installing Instructions
 
 3.Download the latest release of the PDUBMod and extract the folder into %AppData%Roaming\Balatro\mods It should look like this \AppData\Roaming\Balatro\mods
 
-4.Launch the game and click the Mods button, it should've loaded properly if you followed the steps correctly!
+4. Install Talisman and add it to %AppData%Roaming\Balatro\mods https://github.com/SpectralPack/Talisman
+
+5.Launch the game and click the Mods button, it should've loaded properly if you followed the steps correctly!
 
 
 DISCLAIMER
